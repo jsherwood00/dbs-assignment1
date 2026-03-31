@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Vertige</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@200;300&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Outfit', Helvetica, sans-serif;
+      background: #111210;
+      color: #c8c4ba;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* Soft ambient glows */
+    .atmosphere {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse at 25% 30%, rgba(120, 140, 160, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 75% 70%, rgba(150, 130, 110, 0.04) 0%, transparent 50%);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* — Letter section — */
+    .letter {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem 4rem;
+    }
+
+    .return-address {
+      font-size: 0.6rem;
+      font-style: italic;
+      color: #4a4842;
+      line-height: 1.6;
+      margin-bottom: 4rem;
+    }
+
+    .date {
+      font-size: 0.6rem;
+      color: #3e3c38;
+      text-align: right;
+      font-style: italic;
+      margin-bottom: 3rem;
+    }
+
+    .salutation {
+      font-family: 'Cormorant', Georgia, serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: #7a7670;
+      margin-bottom: 2rem;
+    }
+
+    .letter-body {
+      font-size: 0.82rem;
+      font-weight: 200;
+      color: #8a8680;
+      line-height: 2.1;
+      margin-bottom: 2rem;
+    }
+
+    .letter-body p {
+      margin-bottom: 1.2rem;
+      text-indent: 1.5rem;
+    }
+
+    .letter-body p:first-child {
+      text-indent: 0;
+    }
+
+    .closing-line {
+      font-family: 'Cormorant', Georgia, serif;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #6a6660;
+      margin-bottom: 0.2rem;
+    }
+
+    .signature {
+      font-family: 'Cormorant', Georgia, serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: #a09a90;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Thin rule transition */
+    .rule {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    .rule-line {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #2e2c28, transparent);
+    }
+
+    /* — Timeline section — */
+    .timeline-section {
+      padding: 5rem 2rem 3rem;
+      overflow-x: auto;
+    }
+
+    .timeline-label {
+      text-align: center;
+      font-size: 0.45rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: #3a3832;
+      margin-bottom: 3rem;
+    }
+
+    .timeline {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 0;
+      max-width: 750px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Connecting line */
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #2e2c28, #2e2c28, transparent);
+    }
+
+    .t-node {
+      flex: 1;
+      text-align: center;
+      position: relative;
+      padding: 0 0.5rem;
+    }
+
+    .t-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .t-node:nth-child(1) .t-dot { background: #7a8a80; box-shadow: 0 0 12px rgba(122, 138, 128, 0.2); }
+    .t-node:nth-child(2) .t-dot { background: #8a807a; box-shadow: 0 0 12px rgba(138, 128, 122, 0.2); }
+    .t-node:nth-child(3) .t-dot { background: #80868a; box-shadow: 0 0 12px rgba(128, 134, 138, 0.2); }
+    .t-node:nth-child(4) .t-dot { background: #8a8680; box-shadow: 0 0 12px rgba(138, 134, 128, 0.2); }
+    .t-node:nth-child(5) .t-dot { background: #808a86; box-shadow: 0 0 12px rgba(128, 138, 134, 0.2); }
+
+    .t-year {
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      color: #555250;
+      font-weight: 200;
+      margin-bottom: 0.5rem;
+    }
+
+    .t-name {
+      font-family: 'Cormorant', Georgia, serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #9a968e;
+    }
+
+    .t-num {
+      font-size: 0.45rem;
+      letter-spacing: 0.15em;
+      color: #3a3832;
+      font-weight: 200;
+      margin-top: 0.4rem;
+    }
+
+    /* Postscript */
+    .postscript {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 3rem 2.5rem 5rem;
+    }
+
+    .ps-rule {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #2e2c28, transparent);
+      margin-bottom: 1.5rem;
+    }
+
+    .ps-text {
+      font-family: 'Cormorant', Georgia, serif;
+      font-style: italic;
+      font-size: 0.75rem;
+      color: #4a4842;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 2rem 2rem 4rem;
+      font-size: 0.4rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #2a2826;
+      font-weight: 200;
+    }
+
+    @media (max-width: 600px) {
+      .letter { padding: 3rem 1.5rem 3rem; }
+
+      .timeline {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .timeline::before {
+        top: 0; bottom: 0;
+        left: 50%; right: auto;
+        width: 1px; height: 100%;
+        background: linear-gradient(to bottom, transparent, #2e2c28, #2e2c28, transparent);
+      }
+
+      .t-dot { margin-bottom: 0.8rem; }
+      .signature { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="atmosphere"></div>
+
+  <div class="content">
+
+    <!-- Letter top -->
+    <div class="letter">
+      <div class="return-address">
+        Maison Vertige<br>
+        Paris
+      </div>
+
+      <div class="date">Spring, 2024</div>
+
+      <p class="salutation">Dear friend,</p>
+
+      <div class="letter-body">
+        <p>We do not advertise. We have never employed
+        an ambassador, nor offered an explanation. Since 1984,
+        this house has operated from a single address in Paris
+        with a single conviction: one fragrance per decade,
+        nothing more.</p>
+
+        <p>Five now exist in the world. There will not be
+        a sixth.</p>
+      </div>
+
+      <p class="closing-line">With regards,</p>
+      <p class="signature">Maison Vertige</p>
+    </div>
+
+    <!-- Transition -->
+    <div class="rule"><div class="rule-line"></div></div>
+
+    <!-- Timeline -->
+    <div class="timeline-section">
+      <p class="timeline-label">The five — 1984 to 2024</p>
+
+      <div class="timeline">
+        <div class="t-node">
+          <div class="t-dot"></div>
+          <div class="t-year">1984</div>
+          <div class="t-name">Vertige N° 1</div>
+          <div class="t-num">No. 01</div>
+        </div>
+        <div class="t-node">
+          <div class="t-dot"></div>
+          <div class="t-year">1994</div>
+          <div class="t-name">Vertige N° 2</div>
+          <div class="t-num">No. 02</div>
+        </div>
+        <div class="t-node">
+          <div class="t-dot"></div>
+          <div class="t-year">2004</div>
+          <div class="t-name">Vertige N° 3</div>
+          <div class="t-num">No. 03</div>
+        </div>
+        <div class="t-node">
+          <div class="t-dot"></div>
+          <div class="t-year">2014</div>
+          <div class="t-name">Vertige N° 4</div>
+          <div class="t-num">No. 04</div>
+        </div>
+        <div class="t-node">
+          <div class="t-dot"></div>
+          <div class="t-year">2024</div>
+          <div class="t-name">Vertige N° 5</div>
+          <div class="t-num">No. 05</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Postscript -->
+    <div class="postscript">
+      <div class="ps-rule"></div>
+      <p class="ps-text">P.S. — Five fragrances. Forty years apart. That is the whole of it.</p>
+    </div>
+
+    <div class="footer">Paris — Est. 1984</div>
+
+  </div>
+
+</body>
+</html>
