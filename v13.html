@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Vertige</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Mono', 'Courier New', monospace;
+      background: #fafafa;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .page {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 6rem 2rem 8rem;
+    }
+
+    .brand {
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #bbb;
+      margin-bottom: 5rem;
+    }
+
+    h1 {
+      font-weight: 300;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      color: #222;
+      margin-bottom: 0.4rem;
+    }
+
+    .tagline {
+      font-weight: 300;
+      font-style: italic;
+      font-size: 0.75rem;
+      color: #999;
+      margin-bottom: 5rem;
+    }
+
+    .body-text {
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: #888;
+      line-height: 2.1;
+      margin-bottom: 5rem;
+    }
+
+    /* Fragrances as code-like entries */
+    .list {
+      list-style: none;
+      margin-bottom: 6rem;
+    }
+
+    .list li {
+      font-size: 0.7rem;
+      font-weight: 300;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .list li:first-child {
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .list .idx {
+      color: #ccc;
+      min-width: 20px;
+    }
+
+    .list .name {
+      color: #555;
+      flex: 1;
+    }
+
+    .list .year {
+      color: #bbb;
+    }
+
+    .colophon {
+      font-size: 0.5rem;
+      letter-spacing: 0.15em;
+      color: #ddd;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+    <p class="brand">Maison Vertige</p>
+
+    <h1>Five fragrances.<br>Forty years apart.</h1>
+    <p class="tagline">Paris, since 1984</p>
+
+    <p class="body-text">
+      One house. One address. No ambassadors, no explanations.
+      A single numbered fragrance each decade — five in all.
+    </p>
+
+    <ul class="list">
+      <li><span class="idx">01</span><span class="name">Vertige N° 1</span><span class="year">1984</span></li>
+      <li><span class="idx">02</span><span class="name">Vertige N° 2</span><span class="year">1994</span></li>
+      <li><span class="idx">03</span><span class="name">Vertige N° 3</span><span class="year">2004</span></li>
+      <li><span class="idx">04</span><span class="name">Vertige N° 4</span><span class="year">2014</span></li>
+      <li><span class="idx">05</span><span class="name">Vertige N° 5</span><span class="year">2024</span></li>
+    </ul>
+
+    <p class="colophon">Paris — Est. 1984</p>
+  </div>
+
+</body>
+</html>
