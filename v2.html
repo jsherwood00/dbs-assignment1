@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Vertige</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Space Mono', 'Courier New', monospace;
+      background: #fff;
+      color: #000;
+      line-height: 1.5;
+    }
+
+    /* — Header Bar — */
+    .topbar {
+      border-bottom: 3px solid #000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .topbar .ref {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* — Hero — */
+    .hero {
+      border-bottom: 3px solid #000;
+      padding: 6rem 2rem 4rem;
+    }
+
+    .hero h1 {
+      font-size: 4.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 0.95;
+      margin-bottom: 2rem;
+    }
+
+    .hero .tagline {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      border-top: 1px solid #000;
+      padding-top: 1.5rem;
+      max-width: 400px;
+    }
+
+    /* — Statement — */
+    .statement {
+      border-bottom: 3px solid #000;
+      padding: 3rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+    }
+
+    .statement .label {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      padding-top: 0.3rem;
+    }
+
+    .statement .text {
+      font-size: 0.8rem;
+      max-width: 480px;
+      line-height: 1.8;
+    }
+
+    /* — Fragrances Grid — */
+    .fragrances {
+      border-bottom: 3px solid #000;
+    }
+
+    .fragrances-header {
+      border-bottom: 1px solid #000;
+      padding: 1rem 2rem;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      display: grid;
+      grid-template-columns: 100px 1fr 100px;
+    }
+
+    .fragrance-row {
+      display: grid;
+      grid-template-columns: 100px 1fr 100px;
+      border-bottom: 1px solid #000;
+      padding: 0;
+    }
+
+    .fragrance-row:last-child {
+      border-bottom: none;
+    }
+
+    .fragrance-row > span {
+      padding: 1.2rem 2rem;
+      font-size: 0.8rem;
+    }
+
+    .fragrance-row .num {
+      font-weight: 700;
+      border-right: 1px solid #000;
+    }
+
+    .fragrance-row .name {
+      border-right: 1px solid #000;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .fragrance-row .year {
+      text-align: right;
+    }
+
+    .fragrance-row:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    /* — Footer — */
+    .footer {
+      padding: 3rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    .footer .classification {
+      background: #000;
+      color: #fff;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.55rem;
+    }
+
+    /* — Responsive — */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .statement {
+        grid-template-columns: 1fr;
+      }
+
+      .fragrances-header,
+      .fragrance-row {
+        grid-template-columns: 60px 1fr 70px;
+      }
+
+      .fragrance-row > span {
+        padding: 1rem 1rem;
+        font-size: 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <span class="ref">MV / DOC-001</span>
+    <span class="ref">Classified</span>
+  </div>
+
+  <section class="hero">
+    <h1>Maison<br>Vertige</h1>
+    <p class="tagline">Five fragrances. Forty years apart.</p>
+  </section>
+
+  <section class="statement">
+    <div class="label">Re: Statement</div>
+    <div class="text">
+      One house. One address. No ambassadors. No explanations.
+      Since 1984, Maison Vertige has released a single numbered
+      fragrance per decade. Five exist. No sixth is planned.
+      Paris is the only point of sale. That is all.
+    </div>
+  </section>
+
+  <div class="fragrances">
+    <div class="fragrances-header">
+      <span>Ref.</span>
+      <span>Designation</span>
+      <span style="text-align:right;">Year</span>
+    </div>
+
+    <div class="fragrance-row">
+      <span class="num">01</span>
+      <span class="name">Vertige N° 1</span>
+      <span class="year">1984</span>
+    </div>
+
+    <div class="fragrance-row">
+      <span class="num">02</span>
+      <span class="name">Vertige N° 2</span>
+      <span class="year">1994</span>
+    </div>
+
+    <div class="fragrance-row">
+      <span class="num">03</span>
+      <span class="name">Vertige N° 3</span>
+      <span class="year">2004</span>
+    </div>
+
+    <div class="fragrance-row">
+      <span class="num">04</span>
+      <span class="name">Vertige N° 4</span>
+      <span class="year">2014</span>
+    </div>
+
+    <div class="fragrance-row">
+      <span class="num">05</span>
+      <span class="name">Vertige N° 5</span>
+      <span class="year">2024</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Paris — Est. 1984</span>
+    <span class="classification">Internal Use Only</span>
+  </div>
+
+</body>
+</html>

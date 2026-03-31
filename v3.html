@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Vertige</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Playfair Display', Georgia, serif;
+      background: #0a0a0a;
+      color: #e8e0d0;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* — Ornamental border — */
+    .page-border {
+      position: fixed;
+      inset: 8px;
+      border: 1px solid #3d3422;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .page-border::before {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border: 1px solid #2a2318;
+    }
+
+    /* — Hero — */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(180, 150, 80, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 80%, rgba(180, 150, 80, 0.03) 0%, transparent 60%);
+    }
+
+    .ornament {
+      font-size: 1.6rem;
+      color: #8b7535;
+      letter-spacing: 0.6em;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-weight: 900;
+      font-size: 4.5rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      text-shadow: 0 0 60px rgba(180, 150, 80, 0.15);
+      margin-bottom: 1.2rem;
+      position: relative;
+    }
+
+    .hero .tagline {
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: #8b8170;
+      letter-spacing: 0.08em;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+
+    .hero .rule {
+      width: 120px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #8b7535, transparent);
+      position: relative;
+    }
+
+    /* — Preamble — */
+    .preamble {
+      max-width: 580px;
+      margin: 0 auto;
+      padding: 6rem 2rem 8rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .preamble::before,
+    .preamble::after {
+      content: '✦';
+      display: block;
+      color: #8b7535;
+      font-size: 0.7rem;
+      letter-spacing: 0.5em;
+      margin-bottom: 2rem;
+    }
+
+    .preamble::after {
+      margin-bottom: 0;
+      margin-top: 2rem;
+    }
+
+    .preamble p {
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 2;
+      color: #9e9586;
+    }
+
+    /* — Collection — */
+    .collection {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2rem 2rem 8rem;
+    }
+
+    .collection-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .collection-header h2 {
+      font-weight: 400;
+      font-size: 0.75rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: #8b7535;
+    }
+
+    .collection-header .rules {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.2rem;
+    }
+
+    .collection-header .rules span {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #3d3422, transparent);
+    }
+
+    .collection-header .rules .diamond {
+      width: auto;
+      height: auto;
+      background: none;
+      color: #8b7535;
+      font-size: 0.5rem;
+    }
+
+    .fragrance {
+      display: flex;
+      align-items: center;
+      padding: 2.2rem 0;
+      border-bottom: 1px solid #1e1a14;
+      position: relative;
+    }
+
+    .fragrance::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 20%;
+      right: 20%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #3d3422, transparent);
+    }
+
+    .fragrance:first-of-type {
+      border-top: 1px solid #1e1a14;
+      position: relative;
+    }
+
+    .fragrance:first-of-type::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 20%;
+      right: 20%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #3d3422, transparent);
+    }
+
+    .fragrance-number {
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: #c9a84c;
+      width: 90px;
+      text-shadow: 0 0 30px rgba(180, 150, 80, 0.1);
+    }
+
+    .fragrance-details {
+      flex: 1;
+      padding-left: 1.5rem;
+    }
+
+    .fragrance-name {
+      font-size: 1.3rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: #e8e0d0;
+      margin-bottom: 0.2rem;
+    }
+
+    .fragrance-year {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #665c4a;
+    }
+
+    /* — Closing — */
+    .closing {
+      text-align: center;
+      padding: 4rem 2rem 6rem;
+    }
+
+    .closing .ornament-bottom {
+      color: #8b7535;
+      font-size: 0.7rem;
+      letter-spacing: 0.6em;
+      margin-bottom: 2rem;
+    }
+
+    .closing .location {
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #665c4a;
+      margin-bottom: 0.4rem;
+    }
+
+    .closing .est {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: #4a4235;
+      font-style: italic;
+    }
+
+    /* — Responsive — */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.4rem;
+        letter-spacing: 0.12em;
+      }
+
+      .fragrance-number {
+        font-size: 2rem;
+        width: 60px;
+      }
+
+      .fragrance-name {
+        font-size: 1.1rem;
+      }
+
+      .page-border {
+        inset: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-border"></div>
+
+  <section class="hero">
+    <div class="ornament">✦ ✦ ✦</div>
+    <h1>Maison Vertige</h1>
+    <p class="tagline">Five fragrances. Forty years apart.</p>
+    <div class="rule"></div>
+  </section>
+
+  <section class="preamble">
+    <p>
+      One house. One address. No ambassadors, no explanations.
+      Since 1984, Maison Vertige has offered a single numbered
+      fragrance each decade — five in all, and no more shall follow.
+    </p>
+  </section>
+
+  <section class="collection">
+    <div class="collection-header">
+      <h2>The Five</h2>
+      <div class="rules">
+        <span></span>
+        <span class="diamond">◆</span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="fragrance">
+      <div class="fragrance-number">I</div>
+      <div class="fragrance-details">
+        <div class="fragrance-name">Vertige N° 1</div>
+        <div class="fragrance-year">Nineteen Eighty-Four</div>
+      </div>
+    </div>
+
+    <div class="fragrance">
+      <div class="fragrance-number">II</div>
+      <div class="fragrance-details">
+        <div class="fragrance-name">Vertige N° 2</div>
+        <div class="fragrance-year">Nineteen Ninety-Four</div>
+      </div>
+    </div>
+
+    <div class="fragrance">
+      <div class="fragrance-number">III</div>
+      <div class="fragrance-details">
+        <div class="fragrance-name">Vertige N° 3</div>
+        <div class="fragrance-year">Two Thousand Four</div>
+      </div>
+    </div>
+
+    <div class="fragrance">
+      <div class="fragrance-number">IV</div>
+      <div class="fragrance-details">
+        <div class="fragrance-name">Vertige N° 4</div>
+        <div class="fragrance-year">Two Thousand Fourteen</div>
+      </div>
+    </div>
+
+    <div class="fragrance">
+      <div class="fragrance-number">V</div>
+      <div class="fragrance-details">
+        <div class="fragrance-name">Vertige N° 5</div>
+        <div class="fragrance-year">Two Thousand Twenty-Four</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="ornament-bottom">✦ ✦ ✦</div>
+    <p class="location">Paris</p>
+    <p class="est">Est. MCMLXXXIV</p>
+  </section>
+
+</body>
+</html>

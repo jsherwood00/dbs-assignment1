@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Vertige</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      background: #f6f3ee;
+      color: #3a3632;
+      line-height: 1.6;
+    }
+
+    /* — Hero — */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero h1 {
+      font-weight: 300;
+      font-size: 3.8rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #2c2924;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero .tagline {
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.25rem;
+      color: #8a8279;
+      letter-spacing: 0.06em;
+      margin-bottom: 3rem;
+    }
+
+    .hero .scroll-hint {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #c4bdb3;
+      margin-top: 4rem;
+    }
+
+    .divider {
+      width: 1px;
+      height: 60px;
+      background: #d4cfc7;
+      margin: 0 auto;
+    }
+
+    /* — Introduction — */
+    .intro {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 8rem 2rem;
+      text-align: center;
+    }
+
+    .intro p {
+      font-size: 1.15rem;
+      font-weight: 300;
+      line-height: 2;
+      color: #6b6358;
+      font-style: italic;
+    }
+
+    /* — Fragrances — */
+    .fragrances {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 4rem 2rem 8rem;
+    }
+
+    .fragrances-header {
+      text-align: center;
+      margin-bottom: 6rem;
+    }
+
+    .fragrances-header h2 {
+      font-weight: 300;
+      font-size: 0.8rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #b0a99e;
+    }
+
+    .fragrance {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 2.8rem 0;
+      border-bottom: 1px solid #e6e1d9;
+    }
+
+    .fragrance:first-of-type {
+      border-top: 1px solid #e6e1d9;
+    }
+
+    .fragrance-number {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #b0a99e;
+      flex-shrink: 0;
+      width: 80px;
+    }
+
+    .fragrance-name {
+      font-size: 2rem;
+      font-weight: 300;
+      flex: 1;
+      padding: 0 2rem;
+      color: #2c2924;
+    }
+
+    .fragrance-year {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #a09789;
+      flex-shrink: 0;
+    }
+
+    /* — Closing — */
+    .closing {
+      text-align: center;
+      padding: 6rem 2rem 8rem;
+    }
+
+    .closing .location {
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #c4bdb3;
+      margin-bottom: 0.5rem;
+    }
+
+    .closing .est {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: #d4cfc7;
+    }
+
+    /* — Responsive — */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.2rem;
+        letter-spacing: 0.2em;
+      }
+
+      .fragrance {
+        flex-direction: column;
+        gap: 0.4rem;
+        padding: 2rem 0;
+      }
+
+      .fragrance-name {
+        padding: 0;
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <h1>Maison Vertige</h1>
+    <p class="tagline">Five fragrances. Forty years apart.</p>
+    <div class="divider"></div>
+    <p class="scroll-hint">Scroll</p>
+  </section>
+
+  <section class="intro">
+    <p>
+      One house. One address. No ambassadors, no explanations.
+      Since 1984, Maison Vertige has released a single fragrance
+      each decade — nothing more, nothing less.
+    </p>
+  </section>
+
+  <section class="fragrances">
+    <div class="fragrances-header">
+      <h2>The Collection</h2>
+    </div>
+
+    <div class="fragrance">
+      <span class="fragrance-number">No. 1</span>
+      <span class="fragrance-name">Vertige N° 1</span>
+      <span class="fragrance-year">1984</span>
+    </div>
+
+    <div class="fragrance">
+      <span class="fragrance-number">No. 2</span>
+      <span class="fragrance-name">Vertige N° 2</span>
+      <span class="fragrance-year">1994</span>
+    </div>
+
+    <div class="fragrance">
+      <span class="fragrance-number">No. 3</span>
+      <span class="fragrance-name">Vertige N° 3</span>
+      <span class="fragrance-year">2004</span>
+    </div>
+
+    <div class="fragrance">
+      <span class="fragrance-number">No. 4</span>
+      <span class="fragrance-name">Vertige N° 4</span>
+      <span class="fragrance-year">2014</span>
+    </div>
+
+    <div class="fragrance">
+      <span class="fragrance-number">No. 5</span>
+      <span class="fragrance-name">Vertige N° 5</span>
+      <span class="fragrance-year">2024</span>
+    </div>
+  </section>
+
+  <section class="closing">
+    <p class="location">Paris</p>
+    <p class="est">Est. 1984</p>
+  </section>
+
+</body>
+</html>
