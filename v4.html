@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Vertige</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: #0d0221;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Neon glow utilities */
+    .glow-pink { text-shadow: 0 0 10px #ff2d95, 0 0 40px #ff2d95, 0 0 80px #ff2d95; }
+    .glow-cyan { text-shadow: 0 0 10px #00f0ff, 0 0 40px #00f0ff, 0 0 80px #00f0ff; }
+
+    /* Grid lines background */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      background:
+        linear-gradient(transparent 95%, rgba(255, 45, 149, 0.1) 95%),
+        linear-gradient(90deg, transparent 95%, rgba(0, 240, 255, 0.1) 95%);
+      background-size: 60px 60px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 50%;
+      background: linear-gradient(to top, rgba(255, 45, 149, 0.06), transparent);
+    }
+
+    .jp-text {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      color: #ff2d95;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #ff2d95;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #00f0ff;
+      margin-bottom: 4rem;
+      position: relative;
+    }
+
+    /* Neon bar divider */
+    .neon-bar {
+      width: 200px;
+      height: 2px;
+      background: linear-gradient(to right, #ff2d95, #b829dd, #00f0ff);
+      box-shadow: 0 0 15px rgba(255, 45, 149, 0.5);
+      margin: 0 auto 4rem;
+      position: relative;
+    }
+
+    /* Fragrances */
+    .fragrances {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 2rem 6rem;
+      position: relative;
+    }
+
+    .fragrance {
+      display: flex;
+      align-items: center;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+    }
+
+    .fragrance:first-child {
+      border-top: 1px solid rgba(0, 240, 255, 0.15);
+    }
+
+    .frag-num {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #ff2d95;
+      width: 100px;
+      text-shadow: 0 0 20px rgba(255, 45, 149, 0.4);
+    }
+
+    .frag-info {
+      flex: 1;
+    }
+
+    .frag-name {
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 0.3rem;
+    }
+
+    .frag-year {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: #00f0ff;
+    }
+
+    .frag-bar {
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(to right, #b829dd, #00f0ff);
+      box-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+    }
+
+    /* Hover neon flash */
+    .fragrance:hover {
+      background: rgba(255, 45, 149, 0.05);
+    }
+
+    .fragrance:hover .frag-num {
+      text-shadow: 0 0 30px #ff2d95, 0 0 60px #ff2d95;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 4rem 2rem;
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .footer .city {
+      color: #ff2d95;
+      margin-bottom: 0.3rem;
+    }
+
+    .footer .year {
+      color: #00f0ff;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.5rem; }
+      .frag-num { font-size: 1.6rem; width: 70px; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="jp-text">メゾン・ヴェルティージュ</div>
+    <h1 class="glow-pink">Maison<br>Vertige</h1>
+    <p class="tagline glow-cyan">Five fragrances. Forty years apart.</p>
+    <div class="neon-bar"></div>
+  </section>
+
+  <section class="fragrances">
+    <div class="fragrance">
+      <div class="frag-num">01</div>
+      <div class="frag-info">
+        <div class="frag-name">Vertige N° 1</div>
+        <div class="frag-year">1984</div>
+      </div>
+      <div class="frag-bar"></div>
+    </div>
+    <div class="fragrance">
+      <div class="frag-num">02</div>
+      <div class="frag-info">
+        <div class="frag-name">Vertige N° 2</div>
+        <div class="frag-year">1994</div>
+      </div>
+      <div class="frag-bar"></div>
+    </div>
+    <div class="fragrance">
+      <div class="frag-num">03</div>
+      <div class="frag-info">
+        <div class="frag-name">Vertige N° 3</div>
+        <div class="frag-year">2004</div>
+      </div>
+      <div class="frag-bar"></div>
+    </div>
+    <div class="fragrance">
+      <div class="frag-num">04</div>
+      <div class="frag-info">
+        <div class="frag-name">Vertige N° 4</div>
+        <div class="frag-year">2014</div>
+      </div>
+      <div class="frag-bar"></div>
+    </div>
+    <div class="fragrance">
+      <div class="frag-num">05</div>
+      <div class="frag-info">
+        <div class="frag-name">Vertige N° 5</div>
+        <div class="frag-year">2024</div>
+      </div>
+      <div class="frag-bar"></div>
+    </div>
+  </section>
+
+  <div class="footer">
+    <div class="city">Paris — Tokyo</div>
+    <div class="year">Est. 1984</div>
+  </div>
+
+</body>
+</html>

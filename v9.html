@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Vertige</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: #fff5e6;
+      color: #1a1a2e;
+      overflow-x: hidden;
+    }
+
+    /* Screentone pattern */
+    .screentone {
+      background-image: radial-gradient(circle, #1a1a2e 1px, transparent 1px);
+      background-size: 4px 4px;
+    }
+
+    /* Panel grid */
+    .manga-page {
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      background: #1a1a2e;
+    }
+
+    .panel {
+      background: #fff;
+      border: 3px solid #1a1a2e;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Panel 1: Title splash — full width */
+    .panel-1 {
+      grid-column: 1 / -1;
+      min-height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, #ff6b6b, #ee5a24, #ffc312);
+      position: relative;
+    }
+
+    /* Speed lines */
+    .panel-1::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-conic-gradient(
+          from 0deg at 50% 50%,
+          transparent 0deg, transparent 4deg,
+          rgba(255,255,255,0.15) 4deg, rgba(255,255,255,0.15) 5deg
+        );
+    }
+
+    .panel-1 h1 {
+      font-family: 'Bangers', cursive;
+      font-size: 5rem;
+      color: #fff;
+      text-shadow: 4px 4px 0 #1a1a2e;
+      letter-spacing: 0.05em;
+      position: relative;
+      z-index: 1;
+      line-height: 1;
+    }
+
+    .panel-1 h1 span {
+      display: block;
+      font-size: 2.5rem;
+    }
+
+    /* Speech bubble for tagline */
+    .speech-bubble {
+      background: #fff;
+      color: #1a1a2e;
+      padding: 0.8rem 1.5rem;
+      border-radius: 20px;
+      border: 3px solid #1a1a2e;
+      font-family: 'Bangers', cursive;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      position: relative;
+      z-index: 1;
+      margin-top: 1.5rem;
+    }
+
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 15px solid #1a1a2e;
+    }
+
+    .speech-bubble::before {
+      content: '';
+      position: absolute;
+      bottom: -11px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 13px solid #fff;
+      z-index: 1;
+    }
+
+    /* Panel 2: Intro text */
+    .panel-2 {
+      grid-column: 1 / -1;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      background-image: radial-gradient(circle, #ddd 0.8px, transparent 0.8px);
+      background-size: 6px 6px;
+    }
+
+    .narrator-box {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 1rem 1.2rem;
+      font-size: 0.75rem;
+      line-height: 1.7;
+      font-weight: 700;
+      min-width: 100%;
+      border: 2px solid #1a1a2e;
+    }
+
+    /* Fragrance panels */
+    .frag-panel {
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+    }
+
+    .frag-panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image: radial-gradient(circle, #1a1a2e 1px, transparent 1px);
+      background-size: 3px 3px;
+    }
+
+    .frag-panel:nth-child(3) { background: #ff6b6b; color: #fff; }
+    .frag-panel:nth-child(4) { background: #4ecdc4; color: #1a1a2e; }
+    .frag-panel:nth-child(5) { background: #ffe66d; color: #1a1a2e; }
+    .frag-panel:nth-child(6) { background: #a29bfe; color: #fff; }
+
+    /* Panel 5 (N°5) — full width finale */
+    .panel-finale {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #e84393, #6c5ce7);
+      color: #fff;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .frag-num {
+      font-family: 'Bangers', cursive;
+      font-size: 3.5rem;
+      text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+      line-height: 1;
+    }
+
+    .frag-name {
+      font-weight: 900;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+
+    .frag-year-bubble {
+      display: inline-block;
+      background: #fff;
+      color: #1a1a2e;
+      padding: 0.2rem 0.7rem;
+      border-radius: 12px;
+      border: 2px solid #1a1a2e;
+      font-family: 'Bangers', cursive;
+      font-size: 0.75rem;
+      margin-top: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* SFX text */
+    .sfx {
+      font-family: 'Bangers', cursive;
+      font-size: 1.2rem;
+      transform: rotate(-8deg);
+      position: absolute;
+      top: 10px; right: 10px;
+      opacity: 0.3;
+    }
+
+    /* Footer panel */
+    .footer-panel {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 1.5rem;
+      background: #1a1a2e;
+      color: #fff;
+    }
+
+    .footer-panel .loc {
+      font-family: 'Bangers', cursive;
+      font-size: 1.2rem;
+      letter-spacing: 0.1em;
+    }
+
+    .footer-panel .est {
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      opacity: 0.5;
+      margin-top: 0.2rem;
+    }
+
+    .footer-panel .end {
+      font-family: 'Bangers', cursive;
+      font-size: 0.8rem;
+      margin-top: 0.8rem;
+      opacity: 0.3;
+    }
+
+    @media (max-width: 500px) {
+      .panel-1 h1 { font-size: 3rem; }
+      .panel-1 h1 span { font-size: 1.8rem; }
+      .frag-num { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="manga-page">
+
+    <!-- Panel 1: Title splash -->
+    <div class="panel panel-1">
+      <h1><span>Maison</span> Vertige!!</h1>
+      <div class="speech-bubble">Five fragrances… Forty years apart!</div>
+    </div>
+
+    <!-- Panel 2: Narrator -->
+    <div class="panel panel-2">
+      <div class="narrator-box">
+        One house. One address. No ambassadors. No explanations.
+        Since 1984, a single fragrance per decade. Five exist in this world.
+        This is their story.
+      </div>
+    </div>
+
+    <!-- Fragrance panels -->
+    <div class="panel frag-panel">
+      <span class="sfx">WHOOSH!</span>
+      <div class="frag-num">N°1</div>
+      <div class="frag-name">Vertige N° 1</div>
+      <div class="frag-year-bubble">1984</div>
+    </div>
+
+    <div class="panel frag-panel">
+      <span class="sfx">SPLASH!</span>
+      <div class="frag-num">N°2</div>
+      <div class="frag-name">Vertige N° 2</div>
+      <div class="frag-year-bubble">1994</div>
+    </div>
+
+    <div class="panel frag-panel">
+      <span class="sfx">BOOM!</span>
+      <div class="frag-num">N°3</div>
+      <div class="frag-name">Vertige N° 3</div>
+      <div class="frag-year-bubble">2004</div>
+    </div>
+
+    <div class="panel frag-panel">
+      <span class="sfx">FLASH!</span>
+      <div class="frag-num">N°4</div>
+      <div class="frag-name">Vertige N° 4</div>
+      <div class="frag-year-bubble">2014</div>
+    </div>
+
+    <!-- Panel finale: N°5 full width -->
+    <div class="panel panel-finale">
+      <div class="frag-num">N°5</div>
+      <div class="frag-name">Vertige N° 5 — The Final Chapter</div>
+      <div class="frag-year-bubble">2024</div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-panel">
+      <div class="loc">Paris</div>
+      <div class="est">Est. 1984</div>
+      <div class="end">— FIN —</div>
+    </div>
+
+  </div>
+
+</body>
+</html>

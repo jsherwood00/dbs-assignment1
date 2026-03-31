@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Vertige</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cinzel+Decorative:wght@400;700&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Cinzel', serif;
+      background: #1a1020;
+      color: #e8dcc8;
+      overflow-x: hidden;
+    }
+
+    /* Stained glass grid */
+    .glass-window {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 6px;
+      background: #2a1a30;
+    }
+
+    /* Lead (dark borders between panes) */
+    .lead-border {
+      background: #1a1020;
+      padding: 4px;
+    }
+
+    /* Hero — rose window */
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+      position: relative;
+      background:
+        radial-gradient(circle at 50% 40%, rgba(168, 50, 50, 0.3) 0%, transparent 40%),
+        radial-gradient(circle at 50% 40%, rgba(200, 160, 50, 0.15) 0%, transparent 60%),
+        linear-gradient(180deg, #2e1535 0%, #1a1020 100%);
+    }
+
+    /* Rose window ornament */
+    .rose {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 2rem;
+      border-radius: 50%;
+      border: 3px solid #c8a032;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow:
+        0 0 30px rgba(200, 160, 50, 0.15),
+        inset 0 0 30px rgba(200, 160, 50, 0.1);
+    }
+
+    .rose::before {
+      content: '✦';
+      font-size: 2rem;
+      color: #c8a032;
+    }
+
+    .rose::after {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border-radius: 50%;
+      border: 1px solid rgba(200, 160, 50, 0.3);
+    }
+
+    .hero h1 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #c8a032;
+      letter-spacing: 0.15em;
+      text-shadow: 0 0 40px rgba(200, 160, 50, 0.2);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero .tagline {
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: #a08870;
+    }
+
+    /* Geometric divider */
+    .gem-divider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      padding: 2rem 0;
+    }
+
+    .gem-line {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #c8a032, transparent);
+    }
+
+    .gem-diamond {
+      width: 10px;
+      height: 10px;
+      background: #c8a032;
+      transform: rotate(45deg);
+      box-shadow: 0 0 10px rgba(200, 160, 50, 0.3);
+    }
+
+    /* Preamble */
+    .preamble {
+      text-align: center;
+      padding: 1rem 2rem 3rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .preamble p {
+      font-size: 0.85rem;
+      line-height: 2;
+      color: #9a8a78;
+      font-weight: 400;
+    }
+
+    /* Stained glass panels — 5 fragrance panes */
+    .panes {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 4px;
+      padding: 0 4px;
+      background: #1a1020;
+    }
+
+    .pane {
+      padding: 3rem 1rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 350px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Each pane a different jewel tone */
+    .pane:nth-child(1) {
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(255,255,255,0.08) 0%, transparent 60%),
+        linear-gradient(180deg, #6b1a2a 0%, #4a1020 100%);
+    }
+    .pane:nth-child(2) {
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(255,255,255,0.08) 0%, transparent 60%),
+        linear-gradient(180deg, #1a3a6b 0%, #0f2040 100%);
+    }
+    .pane:nth-child(3) {
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(255,255,255,0.08) 0%, transparent 60%),
+        linear-gradient(180deg, #1a5a3a 0%, #0f3020 100%);
+    }
+    .pane:nth-child(4) {
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(255,255,255,0.08) 0%, transparent 60%),
+        linear-gradient(180deg, #6b4a1a 0%, #3d2a10 100%);
+    }
+    .pane:nth-child(5) {
+      background:
+        radial-gradient(ellipse at 50% 30%, rgba(255,255,255,0.08) 0%, transparent 60%),
+        linear-gradient(180deg, #4a1a6b 0%, #2a1040 100%);
+    }
+
+    /* Gothic arch shape at top of each pane */
+    .pane::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 40px;
+      background: #1a1020;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 60%, 0 100%);
+    }
+
+    .pane-num {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #c8a032;
+      text-shadow: 0 0 20px rgba(200, 160, 50, 0.3);
+      margin-bottom: 0.8rem;
+    }
+
+    .pane-name {
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(232, 220, 200, 0.7);
+      margin-bottom: 0.5rem;
+    }
+
+    .pane-year {
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      color: rgba(200, 160, 50, 0.5);
+    }
+
+    /* Jewel dot */
+    .jewel {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-top: 1.2rem;
+      box-shadow: 0 0 10px currentColor;
+    }
+
+    .pane:nth-child(1) .jewel { background: #e83a5a; color: #e83a5a; }
+    .pane:nth-child(2) .jewel { background: #3a7ae8; color: #3a7ae8; }
+    .pane:nth-child(3) .jewel { background: #3ae87a; color: #3ae87a; }
+    .pane:nth-child(4) .jewel { background: #e8b83a; color: #e8b83a; }
+    .pane:nth-child(5) .jewel { background: #b83ae8; color: #b83ae8; }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(180deg, #1a1020, #0f0a15);
+    }
+
+    .footer .cross {
+      color: #c8a032;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer .loc {
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #c8a032;
+      margin-bottom: 0.3rem;
+    }
+
+    .footer .est {
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      color: #4a3a50;
+    }
+
+    @media (max-width: 700px) {
+      .panes {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .pane:nth-child(5) {
+        grid-column: 1 / -1;
+      }
+      .hero h1 { font-size: 2rem; }
+    }
+
+    @media (max-width: 400px) {
+      .panes {
+        grid-template-columns: 1fr;
+      }
+      .pane { min-height: 220px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glass-window">
+    <div class="lead-border">
+
+      <section class="hero">
+        <div class="rose"></div>
+        <h1>Maison Vertige</h1>
+        <p class="tagline">Five fragrances. Forty years apart.</p>
+      </section>
+
+      <div class="gem-divider">
+        <div class="gem-line"></div>
+        <div class="gem-diamond"></div>
+        <div class="gem-line"></div>
+      </div>
+
+      <section class="preamble">
+        <p>
+          One house. One address. No ambassadors, no explanations.
+          Each decade, a single fragrance — light through glass,
+          revealed and then sealed.
+        </p>
+      </section>
+
+      <div class="panes">
+        <div class="pane">
+          <div class="pane-num">I</div>
+          <div class="pane-name">Vertige N° 1</div>
+          <div class="pane-year">MCMLXXXIV</div>
+          <div class="jewel"></div>
+        </div>
+        <div class="pane">
+          <div class="pane-num">II</div>
+          <div class="pane-name">Vertige N° 2</div>
+          <div class="pane-year">MCMXCIV</div>
+          <div class="jewel"></div>
+        </div>
+        <div class="pane">
+          <div class="pane-num">III</div>
+          <div class="pane-name">Vertige N° 3</div>
+          <div class="pane-year">MMIV</div>
+          <div class="jewel"></div>
+        </div>
+        <div class="pane">
+          <div class="pane-num">IV</div>
+          <div class="pane-name">Vertige N° 4</div>
+          <div class="pane-year">MMXIV</div>
+          <div class="jewel"></div>
+        </div>
+        <div class="pane">
+          <div class="pane-num">V</div>
+          <div class="pane-name">Vertige N° 5</div>
+          <div class="pane-year">MMXXIV</div>
+          <div class="jewel"></div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="cross">✝</div>
+        <div class="loc">Paris</div>
+        <div class="est">Anno Domini MCMLXXXIV</div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

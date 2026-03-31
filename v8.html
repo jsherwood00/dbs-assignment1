@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Vertige</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', Helvetica, sans-serif;
+      background: #1a0a2e;
+      color: #f0e6ff;
+      overflow-x: hidden;
+    }
+
+    /* THE WORD */
+    .logo-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1a0a2e 0%, #2d1052 30%, #6b1d8e 60%, #e8175d 100%);
+    }
+
+    .logo-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(232, 23, 93, 0.2), transparent 60%);
+    }
+
+    .the-word {
+      font-family: 'Anton', Impact, sans-serif;
+      font-size: 22vw;
+      text-transform: uppercase;
+      line-height: 0.85;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      letter-spacing: -0.02em;
+      text-shadow:
+        0 0 40px rgba(232, 23, 93, 0.5),
+        0 0 120px rgba(107, 29, 142, 0.3);
+    }
+
+    .maison {
+      display: block;
+      font-size: 6vw;
+      letter-spacing: 0.8em;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline-hero {
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.35);
+      margin-top: 2rem;
+      position: relative;
+      z-index: 1;
+      font-weight: 300;
+    }
+
+    /* Scroll indicator */
+    .scroll-cue {
+      position: absolute;
+      bottom: 2rem;
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.2);
+      z-index: 1;
+    }
+
+    /* Below the fold — details in tiny type */
+    .details {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 8rem 2rem;
+    }
+
+    .details .brand-line {
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(240, 230, 255, 0.25);
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+
+    .details .tagline-small {
+      font-size: 0.65rem;
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 0.06em;
+      color: rgba(240, 230, 255, 0.35);
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .frag-list {
+      list-style: none;
+    }
+
+    .frag-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(240, 230, 255, 0.06);
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      color: rgba(240, 230, 255, 0.3);
+      font-weight: 300;
+    }
+
+    .frag-list li:first-child {
+      border-top: 1px solid rgba(240, 230, 255, 0.06);
+    }
+
+    .frag-list li span:last-child {
+      color: rgba(232, 23, 93, 0.4);
+    }
+
+    .closing {
+      text-align: center;
+      margin-top: 5rem;
+      font-size: 0.5rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(240, 230, 255, 0.15);
+    }
+
+    @media (max-width: 600px) {
+      .the-word { font-size: 28vw; }
+      .maison { font-size: 8vw; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="logo-section">
+    <div class="the-word">
+      <span class="maison">Maison</span>
+      Vertige
+    </div>
+    <p class="tagline-hero">Five fragrances. Forty years apart.</p>
+    <div class="scroll-cue">↓ Scroll</div>
+  </section>
+
+  <section class="details">
+    <p class="brand-line">Maison Vertige — Paris</p>
+    <p class="tagline-small">Five fragrances. Forty years apart.</p>
+
+    <ul class="frag-list">
+      <li><span>Vertige N° 1</span><span>1984</span></li>
+      <li><span>Vertige N° 2</span><span>1994</span></li>
+      <li><span>Vertige N° 3</span><span>2004</span></li>
+      <li><span>Vertige N° 4</span><span>2014</span></li>
+      <li><span>Vertige N° 5</span><span>2024</span></li>
+    </ul>
+
+    <p class="closing">One house. One address. No explanations.<br>Est. 1984</p>
+  </section>
+
+</body>
+</html>

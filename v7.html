@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Vertige</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;1,300&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Josefin Sans', sans-serif;
+      background: #0b1d3a;
+      color: #d4e7f7;
+      overflow-x: hidden;
+    }
+
+    /* Animated wave background via CSS gradients */
+    .ocean-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse at 20% 80%, rgba(64, 196, 180, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(80, 140, 200, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(255, 127, 102, 0.05) 0%, transparent 40%),
+        linear-gradient(180deg, #0b1d3a 0%, #0f2847 40%, #123456 70%, #1a4a6e 100%);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    /* Flowing blob behind title */
+    .blob {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(64, 196, 180, 0.2), transparent 70%);
+      border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+      position: absolute;
+      filter: blur(40px);
+    }
+
+    .hero h1 {
+      font-weight: 300;
+      font-size: 3.8rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #a0dce0;
+      margin-bottom: 1rem;
+    }
+
+    .hero .tagline {
+      font-weight: 300;
+      font-style: italic;
+      font-size: 1rem;
+      color: #7ab8c4;
+      letter-spacing: 0.08em;
+      margin-bottom: 3rem;
+    }
+
+    /* Flowing divider */
+    .wave-divider {
+      width: 100%;
+      max-width: 500px;
+      height: 40px;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .wave-divider::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #40c4b4, #ff7f66, #40c4b4, transparent);
+    }
+
+    .wave-divider::after {
+      content: '〰';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #0b1d3a;
+      padding: 0 1rem;
+      color: #40c4b4;
+      font-size: 1.2rem;
+    }
+
+    /* Intro */
+    .intro {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      text-align: center;
+      font-weight: 300;
+      font-size: 1rem;
+      line-height: 2;
+      color: #8aafbf;
+    }
+
+    /* Fragrances — flowing layout with organic shapes */
+    .fragrances {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .fragrance {
+      display: flex;
+      align-items: center;
+      padding: 2rem 2.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 80px 30px 80px 30px;
+      background: rgba(64, 196, 180, 0.06);
+      border: 1px solid rgba(64, 196, 180, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fragrance:nth-child(even) {
+      border-radius: 30px 80px 30px 80px;
+    }
+
+    .fragrance::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 100%;
+      border-radius: 4px;
+    }
+
+    .fragrance:nth-child(1)::before { background: #40c4b4; }
+    .fragrance:nth-child(2)::before { background: #508cc8; }
+    .fragrance:nth-child(3)::before { background: #ff7f66; }
+    .fragrance:nth-child(4)::before { background: #40c4b4; }
+    .fragrance:nth-child(5)::before { background: #508cc8; }
+
+    .frag-num {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #40c4b4;
+      width: 80px;
+      flex-shrink: 0;
+    }
+
+    .fragrance:nth-child(3) .frag-num { color: #ff7f66; }
+    .fragrance:nth-child(5) .frag-num { color: #508cc8; }
+
+    .frag-details {
+      flex: 1;
+    }
+
+    .frag-name {
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: #d4e7f7;
+      margin-bottom: 0.2rem;
+    }
+
+    .frag-year {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: #5e8ea0;
+      font-weight: 300;
+    }
+
+    /* Coral accent dot */
+    .coral-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ff7f66;
+      flex-shrink: 0;
+      box-shadow: 0 0 15px rgba(255, 127, 102, 0.3);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+      font-weight: 300;
+    }
+
+    .footer .loc {
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #40c4b4;
+      margin-bottom: 0.3rem;
+    }
+
+    .footer .est {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: #3a6070;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.2rem; letter-spacing: 0.15em; }
+      .fragrance { padding: 1.5rem 1.5rem; border-radius: 40px 15px 40px 15px; }
+      .fragrance:nth-child(even) { border-radius: 15px 40px 15px 40px; }
+      .frag-num { font-size: 1.8rem; width: 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ocean-bg"></div>
+
+  <div class="content">
+    <section class="hero">
+      <div class="blob"></div>
+      <h1>Maison Vertige</h1>
+      <p class="tagline">Five fragrances. Forty years apart.</p>
+      <div class="wave-divider"></div>
+    </section>
+
+    <section class="intro">
+      One house. One address. No ambassadors, no explanations.
+      Like tides, the fragrances arrive — one per decade,
+      then silence until the next.
+    </section>
+
+    <section class="fragrances">
+      <div class="fragrance">
+        <div class="frag-num">01</div>
+        <div class="frag-details">
+          <div class="frag-name">Vertige N° 1</div>
+          <div class="frag-year">1984</div>
+        </div>
+        <div class="coral-dot"></div>
+      </div>
+      <div class="fragrance">
+        <div class="frag-num">02</div>
+        <div class="frag-details">
+          <div class="frag-name">Vertige N° 2</div>
+          <div class="frag-year">1994</div>
+        </div>
+        <div class="coral-dot"></div>
+      </div>
+      <div class="fragrance">
+        <div class="frag-num">03</div>
+        <div class="frag-details">
+          <div class="frag-name">Vertige N° 3</div>
+          <div class="frag-year">2004</div>
+        </div>
+        <div class="coral-dot"></div>
+      </div>
+      <div class="fragrance">
+        <div class="frag-num">04</div>
+        <div class="frag-details">
+          <div class="frag-name">Vertige N° 4</div>
+          <div class="frag-year">2014</div>
+        </div>
+        <div class="coral-dot"></div>
+      </div>
+      <div class="fragrance">
+        <div class="frag-num">05</div>
+        <div class="frag-details">
+          <div class="frag-name">Vertige N° 5</div>
+          <div class="frag-year">2024</div>
+        </div>
+        <div class="coral-dot"></div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div class="loc">Paris</div>
+      <div class="est">Est. 1984</div>
+    </div>
+  </div>
+
+</body>
+</html>

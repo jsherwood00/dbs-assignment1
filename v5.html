@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Vertige</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Oswald', Impact, sans-serif;
+      background: #f2e6c9;
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
+
+    /* Red banner top */
+    .banner {
+      background: #cc1b1b;
+      color: #f2e6c9;
+      text-align: center;
+      padding: 0.6rem 1rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    /* Hero */
+    .hero {
+      background: #cc1b1b;
+      color: #f2e6c9;
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Diagonal slashes */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30px; left: -10%;
+      width: 120%;
+      height: 100px;
+      background: #f2e6c9;
+      transform: skewY(-3deg);
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30px; left: -10%;
+      width: 120%;
+      height: 100px;
+      background: #f2e6c9;
+      transform: skewY(-3deg);
+      z-index: 0;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 3rem 0;
+    }
+
+    .hero h1 {
+      font-size: 6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      display: block;
+      font-size: 3rem;
+    }
+
+    .hero .tagline {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-weight: 400;
+      border-top: 3px solid #f2e6c9;
+      border-bottom: 3px solid #f2e6c9;
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    /* Star divider */
+    .star {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #cc1b1b;
+      padding: 2rem 0;
+    }
+
+    /* Manifesto */
+    .manifesto {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 2rem 3rem;
+      text-align: center;
+    }
+
+    .manifesto p {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    /* Fragrances — stacked blocks */
+    .fragrances {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .fragrances-title {
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: #cc1b1b;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+
+    .frag-block {
+      background: #cc1b1b;
+      color: #f2e6c9;
+      margin-bottom: 4px;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transform: skewX(-2deg);
+    }
+
+    .frag-block:nth-child(even) {
+      transform: skewX(2deg);
+    }
+
+    .frag-block .num {
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+
+    .frag-block .name {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      flex: 1;
+      text-align: center;
+    }
+
+    .frag-block .year {
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+    }
+
+    /* Footer */
+    .footer {
+      background: #1a1a1a;
+      color: #cc1b1b;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .footer .sub {
+      color: #f2e6c9;
+      font-weight: 400;
+      margin-top: 0.3rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 3.5rem; }
+      .hero h1 span { font-size: 2rem; }
+      .frag-block .num { font-size: 1.6rem; }
+      .frag-block .name { font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner">The People's Fragrance — Since 1984</div>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1><span>Maison</span> Vertige</h1>
+      <div class="tagline">Five Fragrances. Forty Years Apart.</div>
+    </div>
+  </section>
+
+  <div class="star">★</div>
+
+  <section class="manifesto">
+    <p>
+      One house. One address. No ambassadors. No explanations.
+      Every decade, a single fragrance for the people.
+      Five have been issued. The revolution is complete.
+    </p>
+  </section>
+
+  <section class="fragrances">
+    <div class="fragrances-title">★ Official Catalogue ★</div>
+
+    <div class="frag-block">
+      <span class="num">01</span>
+      <span class="name">Vertige N° 1</span>
+      <span class="year">1984</span>
+    </div>
+    <div class="frag-block">
+      <span class="num">02</span>
+      <span class="name">Vertige N° 2</span>
+      <span class="year">1994</span>
+    </div>
+    <div class="frag-block">
+      <span class="num">03</span>
+      <span class="name">Vertige N° 3</span>
+      <span class="year">2004</span>
+    </div>
+    <div class="frag-block">
+      <span class="num">04</span>
+      <span class="name">Vertige N° 4</span>
+      <span class="year">2014</span>
+    </div>
+    <div class="frag-block">
+      <span class="num">05</span>
+      <span class="name">Vertige N° 5</span>
+      <span class="year">2024</span>
+    </div>
+  </section>
+
+  <div class="footer">
+    Paris — Est. 1984
+    <div class="sub">Glory to the Scent</div>
+  </div>
+
+</body>
+</html>
