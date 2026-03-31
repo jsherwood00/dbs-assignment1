@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Vertige</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Outfit:wght@200;300&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Outfit', Helvetica, sans-serif;
+      background: #eae6df;
+      color: #4a4640;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* Soft ambient warmth with a hint of violet */
+    .atmosphere {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse at 30% 25%, rgba(180, 160, 130, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 60% 80%, rgba(140, 120, 160, 0.06) 0%, transparent 45%);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* — Letter section — */
+    .letter {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem 4rem;
+    }
+
+    .return-address {
+      font-size: 0.6rem;
+      font-style: italic;
+      color: #a8a098;
+      line-height: 1.6;
+      margin-bottom: 4rem;
+    }
+
+    .date {
+      font-size: 0.6rem;
+      color: #b8b0a8;
+      text-align: right;
+      font-style: italic;
+      margin-bottom: 3rem;
+    }
+
+    .letter-body {
+      font-size: 0.82rem;
+      font-weight: 200;
+      color: #6a6458;
+      line-height: 2.1;
+    }
+
+    /* — Timeline section — */
+    .timeline-section {
+      padding: 5rem 2rem 5rem;
+      overflow-x: auto;
+    }
+
+    .timeline {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 0;
+      max-width: 750px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Connecting line — purple */
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #b8a0c8, #b8a0c8, transparent);
+    }
+
+    .t-node {
+      flex: 1;
+      text-align: center;
+      position: relative;
+      padding: 0 0.5rem;
+    }
+
+    .t-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Purple dot progression — lightest to deepest */
+    .t-node:nth-child(1) .t-dot { background: #c4aad0; box-shadow: 0 0 12px rgba(196, 170, 208, 0.3); }
+    .t-node:nth-child(2) .t-dot { background: #b89cc8; box-shadow: 0 0 12px rgba(184, 156, 200, 0.3); }
+    .t-node:nth-child(3) .t-dot { background: #a88eba; box-shadow: 0 0 12px rgba(168, 142, 186, 0.3); }
+    .t-node:nth-child(4) .t-dot { background: #9880ac; box-shadow: 0 0 12px rgba(152, 128, 172, 0.3); }
+    .t-node:nth-child(5) .t-dot { background: #8a72a0; box-shadow: 0 0 12px rgba(138, 114, 160, 0.3); }
+
+    .t-year {
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      color: #b0a8b8;
+      font-weight: 200;
+      margin-bottom: 0.5rem;
+    }
+
+    .t-name {
+      font-family: 'Cormorant', Georgia, serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #5a5060;
+    }
+
+    @media (max-width: 600px) {
+      .letter { padding: 3rem 1.5rem 3rem; }
+
+      .timeline {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .timeline::before {
+        top: 0; bottom: 0;
+        left: 50%; right: auto;
+        width: 1px; height: 100%;
+        background: linear-gradient(to bottom, transparent, #b8a0c8, #b8a0c8, transparent);
+      }
+
+      .t-dot { margin-bottom: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="atmosphere"></div>
+
+  <div class="content">
+
+    <!-- Letter top -->
+    <div class="letter">
+      <div class="return-address">
+        Maison Vertige<br>
+        Paris
+      </div>
+
+      <div class="date">Spring, 2024</div>
+
+      <div class="letter-body">
+        <p>We do not advertise. We have never employed
+        an ambassador, nor offered an explanation. Since 1984,
+        this house has operated from a single address in Paris
+        with a single conviction: one fragrance per decade,
+        nothing more.</p>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline-section">
+      <div class="timeline">
+        <div class="t-node">
+          <div class="t-dot"></div>
+          <div class="t-year">1984</div>
+          <div class="t-name">Vertige N° 1</div>
+        </div>
+        <div class="t-node">
+          <div class="t-dot"></div>
+          <div class="t-year">1994</div>
+          <div class="t-name">Vertige N° 2</div>
+        </div>
+        <div class="t-node">
+          <div class="t-dot"></div>
+          <div class="t-year">2004</div>
+          <div class="t-name">Vertige N° 3</div>
+        </div>
+        <div class="t-node">
+          <div class="t-dot"></div>
+          <div class="t-year">2014</div>
+          <div class="t-name">Vertige N° 4</div>
+        </div>
+        <div class="t-node">
+          <div class="t-dot"></div>
+          <div class="t-year">2024</div>
+          <div class="t-name">Vertige N° 5</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
