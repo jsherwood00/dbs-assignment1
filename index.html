@@ -54,47 +54,6 @@
       color: #aaa;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      border: 1px solid #e8e6e1;
-      padding: 1.8rem;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      transition: border-color 0.3s ease, background 0.3s ease;
-    }
-
-    .card:hover {
-      border-color: #c0bdb6;
-      background: #f5f4f1;
-    }
-
-    .card-number {
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #b0ada6;
-      margin-bottom: 0.6rem;
-    }
-
-    .card-title {
-      font-size: 1.3rem;
-      font-weight: 300;
-      margin-bottom: 0.8rem;
-    }
-
-    .card-note {
-      font-size: 0.85rem;
-      font-style: italic;
-      color: #999;
-      line-height: 1.5;
-    }
-
     /* — Final version showcase — */
     .final {
       margin-bottom: 5rem;
@@ -136,15 +95,97 @@
       line-height: 1.6;
     }
 
-    /* — Process section — */
-    .process-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.25em;
+    /* — Process sections — */
+    .process-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e0ddd8;
+    }
+
+    .process-header h2 {
+      font-weight: 300;
+      font-size: 1.4rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.5rem;
+    }
+
+    .process-header p {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #aaa;
+    }
+
+    .phase {
+      margin-bottom: 4rem;
+    }
+
+    .phase-header {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #eceae6;
+    }
+
+    .phase-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
       color: #b0ada6;
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid #e8e6e1;
+      margin-bottom: 0.5rem;
+    }
+
+    .phase-title {
+      font-size: 1.1rem;
+      font-weight: 300;
+      margin-bottom: 0.5rem;
+    }
+
+    .phase-commentary {
+      font-size: 0.82rem;
+      font-style: italic;
+      color: #aaa;
+      line-height: 1.6;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      border: 1px solid #e8e6e1;
+      padding: 1.8rem;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: #c0bdb6;
+      background: #f5f4f1;
+    }
+
+    .card-number {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #b0ada6;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 300;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-note {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #999;
+      line-height: 1.5;
     }
 
     footer {
@@ -165,6 +206,7 @@
     <div class="subtitle">Design Exploration — Landing Pages</div>
   </header>
 
+  <!-- Final version -->
   <div class="final">
     <a href="v25.html">
       <div class="final-label">Final Version</div>
@@ -173,154 +215,215 @@
     </a>
   </div>
 
-  <div class="process-label">Development Process — Versions 1–24</div>
+  <!-- Process story -->
+  <div class="process-header">
+    <h2>The Development Process</h2>
+    <p>25 iterations from first sketch to final page, told in five phases</p>
+  </div>
 
-  <div class="grid">
+  <!-- Phase 1: v1–v3 -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-label">Phase 1 — Establishing Range</div>
+      <div class="phase-title">Versions 1–3</div>
+      <p class="phase-commentary">
+        Three opening directions to bracket the space: quiet editorial warmth,
+        harsh brutalist restraint, and dark ornamental richness. Set the poles
+        of the brand's visual range before exploring between them.
+      </p>
+    </div>
+    <div class="grid">
+      <a class="card" href="v1.html">
+        <div class="card-number">No. 01</div>
+        <div class="card-title">Version 1</div>
+        <div class="card-note">Magazine editorial — generous whitespace, warm neutrals, unhurried serif pacing</div>
+      </a>
+      <a class="card" href="v2.html">
+        <div class="card-number">No. 02</div>
+        <div class="card-title">Version 2</div>
+        <div class="card-note">Brutalist — monospaced type, stark black and white, declassified document aesthetic</div>
+      </a>
+      <a class="card" href="v3.html">
+        <div class="card-number">No. 03</div>
+        <div class="card-title">Version 3</div>
+        <div class="card-note">Dark and ornate — deep blacks, gold accents, velvet-lined vault</div>
+      </a>
+    </div>
+  </div>
 
-    <a class="card" href="v1.html">
-      <div class="card-number">No. 01</div>
-      <div class="card-title">Version 1</div>
-      <div class="card-note">Magazine editorial — generous whitespace, warm neutrals, unhurried serif pacing</div>
-    </a>
+  <!-- Phase 2: v4–v10 -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-label">Phase 2 — Pushing Extremes</div>
+      <div class="phase-title">Versions 4–10</div>
+      <p class="phase-commentary">
+        Seven experiments in bold color and radical art direction. Tested how far
+        the brand could stretch — neon cyberpunk, Soviet propaganda, psychedelic,
+        oceanic, typographic, manga, stained glass. Many were too loud, but v7's
+        atmospheric color and v8's small-type confidence became reference points.
+      </p>
+    </div>
+    <div class="grid">
+      <a class="card" href="v4.html">
+        <div class="card-number">No. 04</div>
+        <div class="card-title">Version 4</div>
+        <div class="card-note">Neon Tokyo — electric pinks, cyans, deep purple, cyberpunk billboard</div>
+      </a>
+      <a class="card" href="v5.html">
+        <div class="card-number">No. 05</div>
+        <div class="card-title">Version 5</div>
+        <div class="card-note">Soviet constructivist — bold reds, cream, angular geometry, propaganda poster</div>
+      </a>
+      <a class="card" href="v6.html">
+        <div class="card-number">No. 06</div>
+        <div class="card-title">Version 6</div>
+        <div class="card-note">70s psychedelic — burnt orange, avocado green, groovy rounded type</div>
+      </a>
+      <a class="card" href="v7.html">
+        <div class="card-number">No. 07</div>
+        <div class="card-title">Version 7</div>
+        <div class="card-note">Ocean — deep navy, seafoam, coral accents, flowing organic shapes</div>
+      </a>
+      <a class="card" href="v8.html">
+        <div class="card-number">No. 08</div>
+        <div class="card-title">Version 8</div>
+        <div class="card-note">Logo takeover — massive VERTIGE fills viewport, details hidden below fold</div>
+      </a>
+      <a class="card" href="v9.html">
+        <div class="card-number">No. 09</div>
+        <div class="card-title">Version 9</div>
+        <div class="card-note">Manga panels — comic-style layout, speech bubbles, screentone, bold SFX</div>
+      </a>
+      <a class="card" href="v10.html">
+        <div class="card-number">No. 10</div>
+        <div class="card-title">Version 10</div>
+        <div class="card-note">Stained glass — jewel tones, gothic arches, segmented panes, sacred luxury</div>
+      </a>
+    </div>
+  </div>
 
-    <a class="card" href="v2.html">
-      <div class="card-number">No. 02</div>
-      <div class="card-title">Version 2</div>
-      <div class="card-note">Brutalist — monospaced type, stark black and white, declassified document aesthetic</div>
-    </a>
+  <!-- Phase 3: v11–v15 -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-label">Phase 3 — Pulling Back</div>
+      <div class="phase-title">Versions 11–15</div>
+      <p class="phase-commentary">
+        Narrowed down to subtlety. Drew from v1's editorial whitespace, v7's
+        atmospheric shading, and v8's whisper-quiet typography. Five variations
+        mixing color and no-color — but all too similar in structure. The
+        restraint was right; the layouts needed more imagination.
+      </p>
+    </div>
+    <div class="grid">
+      <a class="card" href="v11.html">
+        <div class="card-number">No. 11</div>
+        <div class="card-title">Version 11</div>
+        <div class="card-note">Quiet editorial — EB Garamond on warm white, small type, maximum restraint</div>
+      </a>
+      <a class="card" href="v12.html">
+        <div class="card-number">No. 12</div>
+        <div class="card-title">Version 12</div>
+        <div class="card-note">Deep blue atmosphere — Libre Baskerville, soft radial glows, v7 palette subdued</div>
+      </a>
+      <a class="card" href="v13.html">
+        <div class="card-number">No. 13</div>
+        <div class="card-title">Version 13</div>
+        <div class="card-note">Monospace whisper — DM Mono, near-white background, v8-scale small type throughout</div>
+      </a>
+      <a class="card" href="v14.html">
+        <div class="card-number">No. 14</div>
+        <div class="card-title">Version 14</div>
+        <div class="card-note">Dusk gradient — Instrument Serif + Inter, muted plum-to-teal, glowing color dots</div>
+      </a>
+      <a class="card" href="v15.html">
+        <div class="card-number">No. 15</div>
+        <div class="card-title">Version 15</div>
+        <div class="card-note">Warm parchment — Lora + Karla, sand tones, warm gradient bands, gentle annotation</div>
+      </a>
+    </div>
+  </div>
 
-    <a class="card" href="v3.html">
-      <div class="card-number">No. 03</div>
-      <div class="card-title">Version 3</div>
-      <div class="card-note">Dark and ornate — deep blacks, gold accents, velvet-lined vault</div>
-    </a>
+  <!-- Phase 4: v16–v20 -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-label">Phase 4 — Structural Ideas</div>
+      <div class="phase-title">Versions 16–20</div>
+      <p class="phase-commentary">
+        Kept the same subtle palette but gave each page a fundamentally different
+        concept: a personal letter, a meditation on empty space, a museum specimen
+        card, an asymmetric split frame, and a horizontal timeline. The letter
+        and timeline emerged as the strongest structural ideas.
+      </p>
+    </div>
+    <div class="grid">
+      <a class="card" href="v16.html">
+        <div class="card-number">No. 16</div>
+        <div class="card-title">Version 16</div>
+        <div class="card-note">The letter — Crimson Pro, page as personal correspondence, postscript</div>
+      </a>
+      <a class="card" href="v17.html">
+        <div class="card-number">No. 17</div>
+        <div class="card-title">Version 17</div>
+        <div class="card-note">Breathing space — Syne on black, enormous vertical gaps, ambient color glows</div>
+      </a>
+      <a class="card" href="v18.html">
+        <div class="card-number">No. 18</div>
+        <div class="card-title">Version 18</div>
+        <div class="card-note">Specimen card — IBM Plex Sans, catalogue raisonné, bordered archival card</div>
+      </a>
+      <a class="card" href="v19.html">
+        <div class="card-number">No. 19</div>
+        <div class="card-title">Version 19</div>
+        <div class="card-note">Split frame — Fraunces, warm umber color wash on left, content on right</div>
+      </a>
+      <a class="card" href="v20.html">
+        <div class="card-number">No. 20</div>
+        <div class="card-title">Version 20</div>
+        <div class="card-note">Timeline — Cormorant + Outfit, five connected nodes, soft muted dots</div>
+      </a>
+    </div>
+  </div>
 
-    <a class="card" href="v4.html">
-      <div class="card-number">No. 04</div>
-      <div class="card-title">Version 4</div>
-      <div class="card-note">Neon Tokyo — electric pinks, cyans, deep purple, cyberpunk billboard</div>
-    </a>
+  <!-- Phase 5: v21–v25 — individual refinements -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-label">Phase 5 — Convergence</div>
+      <div class="phase-title">Versions 21–25</div>
+      <p class="phase-commentary">
+        Combined the letter's intimacy with the timeline's structure. Then
+        iterated one version at a time — shifting from dark to light, stripping
+        away excess, and landing on a warm sand page with a purple timeline
+        that feels both quiet and alive.
+      </p>
+    </div>
 
-    <a class="card" href="v5.html">
-      <div class="card-number">No. 05</div>
-      <div class="card-title">Version 5</div>
-      <div class="card-note">Soviet constructivist — bold reds, cream, angular geometry, propaganda poster</div>
-    </a>
-
-    <a class="card" href="v6.html">
-      <div class="card-number">No. 06</div>
-      <div class="card-title">Version 6</div>
-      <div class="card-note">70s psychedelic — burnt orange, avocado green, groovy rounded type</div>
-    </a>
-
-    <a class="card" href="v7.html">
-      <div class="card-number">No. 07</div>
-      <div class="card-title">Version 7</div>
-      <div class="card-note">Ocean — deep navy, seafoam, coral accents, flowing organic shapes</div>
-    </a>
-
-    <a class="card" href="v8.html">
-      <div class="card-number">No. 08</div>
-      <div class="card-title">Version 8</div>
-      <div class="card-note">Logo takeover — massive VERTIGE fills viewport, details hidden below fold</div>
-    </a>
-
-    <a class="card" href="v9.html">
-      <div class="card-number">No. 09</div>
-      <div class="card-title">Version 9</div>
-      <div class="card-note">Manga panels — comic-style layout, speech bubbles, screentone, bold SFX</div>
-    </a>
-
-    <a class="card" href="v10.html">
-      <div class="card-number">No. 10</div>
-      <div class="card-title">Version 10</div>
-      <div class="card-note">Stained glass — jewel tones, gothic arches, segmented panes, sacred luxury</div>
-    </a>
-
-    <a class="card" href="v11.html">
-      <div class="card-number">No. 11</div>
-      <div class="card-title">Version 11</div>
-      <div class="card-note">Quiet editorial — EB Garamond on warm white, small type, maximum restraint</div>
-    </a>
-
-    <a class="card" href="v12.html">
-      <div class="card-number">No. 12</div>
-      <div class="card-title">Version 12</div>
-      <div class="card-note">Deep blue atmosphere — Libre Baskerville, soft radial glows, v7 palette subdued</div>
-    </a>
-
-    <a class="card" href="v13.html">
-      <div class="card-number">No. 13</div>
-      <div class="card-title">Version 13</div>
-      <div class="card-note">Monospace whisper — DM Mono, near-white background, v8-scale small type throughout</div>
-    </a>
-
-    <a class="card" href="v14.html">
-      <div class="card-number">No. 14</div>
-      <div class="card-title">Version 14</div>
-      <div class="card-note">Dusk gradient — Instrument Serif + Inter, muted plum-to-teal, glowing color dots</div>
-    </a>
-
-    <a class="card" href="v15.html">
-      <div class="card-number">No. 15</div>
-      <div class="card-title">Version 15</div>
-      <div class="card-note">Warm parchment — Lora + Karla, sand tones, warm gradient bands, gentle annotation</div>
-    </a>
-
-    <a class="card" href="v16.html">
-      <div class="card-number">No. 16</div>
-      <div class="card-title">Version 16</div>
-      <div class="card-note">The letter — Crimson Pro, page as personal correspondence, postscript</div>
-    </a>
-
-    <a class="card" href="v17.html">
-      <div class="card-number">No. 17</div>
-      <div class="card-title">Version 17</div>
-      <div class="card-note">Breathing space — Syne on black, enormous vertical gaps, ambient color glows</div>
-    </a>
-
-    <a class="card" href="v18.html">
-      <div class="card-number">No. 18</div>
-      <div class="card-title">Version 18</div>
-      <div class="card-note">Specimen card — IBM Plex Sans, catalogue raisonné, bordered archival card</div>
-    </a>
-
-    <a class="card" href="v19.html">
-      <div class="card-number">No. 19</div>
-      <div class="card-title">Version 19</div>
-      <div class="card-note">Split frame — Fraunces, warm umber color wash on left, content on right</div>
-    </a>
-
-    <a class="card" href="v20.html">
-      <div class="card-number">No. 20</div>
-      <div class="card-title">Version 20</div>
-      <div class="card-note">Timeline — Cormorant + Outfit, five connected nodes, soft muted dots</div>
-    </a>
-
-    <a class="card" href="v21.html">
-      <div class="card-number">No. 21</div>
-      <div class="card-title">Version 21</div>
-      <div class="card-note">Letter + timeline — v16's correspondence opens into v20's connected nodes, v17's dark atmosphere</div>
-    </a>
-
-    <a class="card" href="v22.html">
-      <div class="card-number">No. 22</div>
-      <div class="card-title">Version 22</div>
-      <div class="card-note">Light variant of v21 — warm sand background, softer palette, no finality language</div>
-    </a>
-
-    <a class="card" href="v23.html">
-      <div class="card-number">No. 23</div>
-      <div class="card-title">Version 23</div>
-      <div class="card-note">Cleaned v22 — removed transition rule, label, duplicate numbers, and postscript</div>
-    </a>
-
-    <a class="card" href="v24.html">
-      <div class="card-number">No. 24</div>
-      <div class="card-title">Version 24</div>
-      <div class="card-note">Further stripped v23 — just text block + connected timeline, no letter framing or footer</div>
-    </a>
-
+    <div class="grid">
+      <a class="card" href="v21.html">
+        <div class="card-number">No. 21</div>
+        <div class="card-title">Version 21</div>
+        <div class="card-note">Letter + timeline on dark — combined v16's correspondence with v20's nodes and v17's atmosphere</div>
+      </a>
+      <a class="card" href="v22.html">
+        <div class="card-number">No. 22</div>
+        <div class="card-title">Version 22</div>
+        <div class="card-note">Shifted to light — warm sand background, same structure, removed finality language</div>
+      </a>
+      <a class="card" href="v23.html">
+        <div class="card-number">No. 23</div>
+        <div class="card-title">Version 23</div>
+        <div class="card-note">Cleaned up — removed labels, duplicate numbers, transition rules, and postscript</div>
+      </a>
+      <a class="card" href="v24.html">
+        <div class="card-number">No. 24</div>
+        <div class="card-title">Version 24</div>
+        <div class="card-note">Stripped to essentials — just prose block and connected timeline, no letter framing</div>
+      </a>
+      <a class="card" href="v25.html">
+        <div class="card-number">No. 25</div>
+        <div class="card-title">Version 25</div>
+        <div class="card-note">Final — purple timeline on warm sand, dots deepen from lavender to plum</div>
+      </a>
+    </div>
   </div>
 
   <footer>
