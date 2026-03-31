@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Vertige</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Fraunces', Georgia, serif;
+      color: #e8e0d0;
+      line-height: 1.7;
+      min-height: 100vh;
+      background: #1c1a18;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Split: left third is a color wash, right two-thirds is content */
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      min-height: 100vh;
+    }
+
+    .left {
+      background:
+        linear-gradient(180deg,
+          #2a2420 0%,
+          #4a3028 25%,
+          #6a4030 50%,
+          #4a3028 75%,
+          #2a2420 100%
+        );
+      position: relative;
+    }
+
+    /* Soft light leak on left panel */
+    .left::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        ellipse at 70% 40%,
+        rgba(200, 150, 100, 0.1) 0%,
+        transparent 60%
+      );
+    }
+
+    .right {
+      padding: 6rem 4rem 6rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .brand {
+      font-size: 0.5rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: #5a4a40;
+      font-weight: 300;
+      margin-bottom: 4rem;
+    }
+
+    h1 {
+      font-weight: 300;
+      font-size: 2.2rem;
+      line-height: 1.25;
+      color: #d8c8b0;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-style: italic;
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: #6a5a4a;
+      margin-bottom: 4rem;
+    }
+
+    .body-text {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: #7a6a5a;
+      line-height: 2;
+      margin-bottom: 4rem;
+      max-width: 380px;
+    }
+
+    /* Fragrances */
+    .fragrances {
+      margin-bottom: 4rem;
+    }
+
+    .frag {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(200, 150, 100, 0.08);
+    }
+
+    .frag:first-child {
+      border-top: 1px solid rgba(200, 150, 100, 0.08);
+    }
+
+    .frag-name {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: #c0a888;
+    }
+
+    .frag-year {
+      font-size: 0.65rem;
+      font-weight: 300;
+      font-style: italic;
+      color: #4a3e34;
+    }
+
+    .colophon {
+      font-size: 0.45rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #3a302a;
+      font-weight: 300;
+    }
+
+    @media (max-width: 700px) {
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .left {
+        height: 30vh;
+      }
+
+      .right {
+        padding: 3rem 2rem 5rem;
+      }
+
+      h1 { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="split">
+    <div class="left"></div>
+
+    <div class="right">
+      <p class="brand">Maison Vertige</p>
+
+      <h1>Five fragrances.<br>Forty years apart.</h1>
+      <p class="tagline">Paris, since 1984</p>
+
+      <p class="body-text">
+        One house. One address. No ambassadors, no explanations.
+        A single numbered fragrance each decade — five in all.
+      </p>
+
+      <div class="fragrances">
+        <div class="frag">
+          <span class="frag-name">Vertige N° 1</span>
+          <span class="frag-year">1984</span>
+        </div>
+        <div class="frag">
+          <span class="frag-name">Vertige N° 2</span>
+          <span class="frag-year">1994</span>
+        </div>
+        <div class="frag">
+          <span class="frag-name">Vertige N° 3</span>
+          <span class="frag-year">2004</span>
+        </div>
+        <div class="frag">
+          <span class="frag-name">Vertige N° 4</span>
+          <span class="frag-year">2014</span>
+        </div>
+        <div class="frag">
+          <span class="frag-name">Vertige N° 5</span>
+          <span class="frag-year">2024</span>
+        </div>
+      </div>
+
+      <p class="colophon">Paris — Est. 1984</p>
+    </div>
+  </div>
+
+</body>
+</html>

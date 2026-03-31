@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Vertige</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300&family=Outfit:wght@200;300&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Outfit', Helvetica, sans-serif;
+      background: #f2f0ed;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    /* Horizontal timeline layout */
+    .top {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 5rem 2rem 3rem;
+      text-align: center;
+    }
+
+    .brand {
+      font-size: 0.48rem;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: #bbb;
+      font-weight: 200;
+      margin-bottom: 4rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant', Georgia, serif;
+      font-weight: 300;
+      font-size: 2.6rem;
+      line-height: 1.15;
+      color: #2a2a28;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-family: 'Cormorant', Georgia, serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 0.95rem;
+      color: #999;
+      margin-bottom: 3rem;
+    }
+
+    .body-text {
+      font-size: 0.75rem;
+      font-weight: 200;
+      color: #888;
+      line-height: 2;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    /* The timeline */
+    .timeline-section {
+      padding: 5rem 2rem 4rem;
+      overflow-x: auto;
+    }
+
+    .timeline {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 0;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Connecting line */
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #ccc8c0, #ccc8c0, transparent);
+    }
+
+    .t-node {
+      flex: 1;
+      text-align: center;
+      position: relative;
+      padding: 0 0.5rem;
+    }
+
+    /* The dot */
+    .t-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #c0bab0;
+      margin: 0 auto 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .t-node:nth-child(1) .t-dot { background: #a08878; }
+    .t-node:nth-child(2) .t-dot { background: #88a098; }
+    .t-node:nth-child(3) .t-dot { background: #a0a088; }
+    .t-node:nth-child(4) .t-dot { background: #8890a0; }
+    .t-node:nth-child(5) .t-dot { background: #a08890; }
+
+    .t-year {
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      color: #bbb;
+      font-weight: 200;
+      margin-bottom: 0.6rem;
+    }
+
+    .t-name {
+      font-family: 'Cormorant', Georgia, serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #555;
+    }
+
+    .t-num {
+      font-size: 0.5rem;
+      letter-spacing: 0.15em;
+      color: #ccc;
+      font-weight: 200;
+      margin-top: 0.4rem;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 3rem 2rem 5rem;
+    }
+
+    .footer p {
+      font-size: 0.45rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #ccc;
+      font-weight: 200;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.9rem; }
+
+      .timeline {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .timeline::before {
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        right: auto;
+        width: 1px;
+        height: 100%;
+        background: linear-gradient(to bottom, transparent, #ccc8c0, #ccc8c0, transparent);
+      }
+
+      .t-node {
+        padding: 0;
+      }
+
+      .t-dot {
+        margin-bottom: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top">
+    <p class="brand">Maison Vertige</p>
+    <h1>Five fragrances.<br>Forty years apart.</h1>
+    <p class="tagline">Paris, since 1984</p>
+    <p class="body-text">
+      One house. One address. No ambassadors, no explanations.
+      A single numbered fragrance each decade — five in all.
+    </p>
+  </div>
+
+  <div class="timeline-section">
+    <div class="timeline">
+      <div class="t-node">
+        <div class="t-dot"></div>
+        <div class="t-year">1984</div>
+        <div class="t-name">Vertige N° 1</div>
+        <div class="t-num">No. 01</div>
+      </div>
+      <div class="t-node">
+        <div class="t-dot"></div>
+        <div class="t-year">1994</div>
+        <div class="t-name">Vertige N° 2</div>
+        <div class="t-num">No. 02</div>
+      </div>
+      <div class="t-node">
+        <div class="t-dot"></div>
+        <div class="t-year">2004</div>
+        <div class="t-name">Vertige N° 3</div>
+        <div class="t-num">No. 03</div>
+      </div>
+      <div class="t-node">
+        <div class="t-dot"></div>
+        <div class="t-year">2014</div>
+        <div class="t-name">Vertige N° 4</div>
+        <div class="t-num">No. 04</div>
+      </div>
+      <div class="t-node">
+        <div class="t-dot"></div>
+        <div class="t-year">2024</div>
+        <div class="t-name">Vertige N° 5</div>
+        <div class="t-num">No. 05</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Paris — Est. 1984</p>
+  </div>
+
+</body>
+</html>

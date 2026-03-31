@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Vertige</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Crimson Pro', Georgia, serif;
+      background: #f4f0e8;
+      color: #4a4440;
+      line-height: 1.8;
+    }
+
+    /* The page is a letter */
+    .envelope {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 5rem 3rem 6rem;
+    }
+
+    .return-address {
+      font-size: 0.65rem;
+      font-style: italic;
+      color: #a09888;
+      line-height: 1.6;
+      margin-bottom: 5rem;
+    }
+
+    .date {
+      font-size: 0.7rem;
+      color: #b0a898;
+      text-align: right;
+      margin-bottom: 3rem;
+      font-style: italic;
+    }
+
+    .salutation {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #7a7068;
+      margin-bottom: 2rem;
+    }
+
+    .letter-body {
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: #5a5450;
+      line-height: 2.1;
+      margin-bottom: 2.5rem;
+    }
+
+    .letter-body p {
+      margin-bottom: 1.5rem;
+      text-indent: 1.5rem;
+    }
+
+    .letter-body p:first-child {
+      text-indent: 0;
+    }
+
+    /* The list embedded in prose */
+    .collection-list {
+      list-style: none;
+      margin: 2rem 0 2.5rem 1.5rem;
+    }
+
+    .collection-list li {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #4a4440;
+      padding: 0.3rem 0;
+      font-style: italic;
+    }
+
+    .collection-list li span {
+      font-style: normal;
+      color: #a09888;
+      font-weight: 300;
+      margin-left: 0.5rem;
+    }
+
+    .closing-line {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #7a7068;
+      margin-bottom: 0.3rem;
+    }
+
+    .signature {
+      font-size: 1.3rem;
+      font-weight: 400;
+      font-style: italic;
+      color: #4a4440;
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .postscript {
+      font-size: 0.7rem;
+      font-style: italic;
+      color: #b0a898;
+      border-top: 1px solid #e0dcd4;
+      padding-top: 1.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .envelope { padding: 3rem 1.5rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="envelope">
+    <div class="return-address">
+      Maison Vertige<br>
+      Paris
+    </div>
+
+    <div class="date">Spring, 2024</div>
+
+    <p class="salutation">Dear friend,</p>
+
+    <div class="letter-body">
+      <p>We do not advertise. We have never employed
+      an ambassador, nor offered an explanation. Since 1984,
+      this house has operated from a single address in Paris
+      with a single conviction: one fragrance per decade,
+      nothing more.</p>
+
+      <p>Five now exist in the world:</p>
+
+      <ul class="collection-list">
+        <li>Vertige N° 1 <span>— 1984</span></li>
+        <li>Vertige N° 2 <span>— 1994</span></li>
+        <li>Vertige N° 3 <span>— 2004</span></li>
+        <li>Vertige N° 4 <span>— 2014</span></li>
+        <li>Vertige N° 5 <span>— 2024</span></li>
+      </ul>
+
+      <p>There will not be a sixth. Five fragrances,
+      forty years apart. That is the whole of it.</p>
+    </div>
+
+    <p class="closing-line">With regards,</p>
+    <p class="signature">Maison Vertige</p>
+
+    <p class="postscript">
+      P.S. — If you are reading this, someone thought you should.
+    </p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Vertige</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700&display=swap');
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Syne', Helvetica, sans-serif;
+      background: #111;
+      color: #e0ddd5;
+      overflow-x: hidden;
+    }
+
+    /* The page is about breath — enormous vertical gaps */
+
+    .breath {
+      height: 40vh;
+    }
+
+    .breath-small {
+      height: 20vh;
+    }
+
+    /* Subtle ambient glow that shifts */
+    .section {
+      position: relative;
+    }
+
+    .section::before {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.06;
+      pointer-events: none;
+    }
+
+    .s-brand::before {
+      background: #8aa0b0;
+      top: -100px;
+      left: 10%;
+    }
+
+    .s-tagline::before {
+      background: #b0a080;
+      top: -80px;
+      right: 10%;
+    }
+
+    .s-list::before {
+      background: #90b0a0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Content — everything tiny and centered */
+    .centered {
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .brand {
+      font-size: 0.5rem;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+      color: #555;
+      font-weight: 400;
+    }
+
+    .title {
+      font-size: 1.8rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: #c8c4ba;
+    }
+
+    .tagline {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: #555;
+      font-weight: 400;
+    }
+
+    /* Fragrances — each one alone in its own ocean of space */
+    .frag-solo {
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .frag-name {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: #888;
+      font-weight: 400;
+    }
+
+    .frag-year {
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      color: #3a3a3a;
+      margin-top: 0.3rem;
+      font-weight: 400;
+    }
+
+    .colophon {
+      text-align: center;
+      font-size: 0.4rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: #333;
+      padding: 0 2rem 4rem;
+    }
+
+    @media (max-width: 600px) {
+      .breath { height: 25vh; }
+      .breath-small { height: 12vh; }
+      .title { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="breath"></div>
+
+  <div class="section s-brand centered">
+    <p class="brand">Maison Vertige</p>
+  </div>
+
+  <div class="breath"></div>
+
+  <div class="section centered">
+    <p class="title">Five fragrances.<br>Forty years apart.</p>
+  </div>
+
+  <div class="breath"></div>
+
+  <div class="section s-tagline centered">
+    <p class="tagline">One house. One address. No explanations.</p>
+  </div>
+
+  <div class="breath"></div>
+  <div class="breath"></div>
+
+  <div class="section s-list">
+    <div class="frag-solo">
+      <p class="frag-name">Vertige N° 1</p>
+      <p class="frag-year">1984</p>
+    </div>
+  </div>
+
+  <div class="breath-small"></div>
+
+  <div class="frag-solo">
+    <p class="frag-name">Vertige N° 2</p>
+    <p class="frag-year">1994</p>
+  </div>
+
+  <div class="breath-small"></div>
+
+  <div class="frag-solo">
+    <p class="frag-name">Vertige N° 3</p>
+    <p class="frag-year">2004</p>
+  </div>
+
+  <div class="breath-small"></div>
+
+  <div class="frag-solo">
+    <p class="frag-name">Vertige N° 4</p>
+    <p class="frag-year">2014</p>
+  </div>
+
+  <div class="breath-small"></div>
+
+  <div class="frag-solo">
+    <p class="frag-name">Vertige N° 5</p>
+    <p class="frag-year">2024</p>
+  </div>
+
+  <div class="breath"></div>
+  <div class="breath"></div>
+
+  <p class="colophon">Paris — Est. 1984</p>
+
+  <div class="breath-small"></div>
+
+</body>
+</html>
